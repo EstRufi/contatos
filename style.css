@@ -72,6 +72,6 @@ button:active{
     background-color: rgb(28, 209, 209);
 }
 
-table,th{
+table,th,tr{
     border: 1px solid black;
 }

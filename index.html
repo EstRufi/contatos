@@ -16,36 +16,37 @@
             <div class="cadastro">
                 <div class="nomeCelular">
                     <label >Nome</label>
-                    <input type="text" required>
+                    <input type="text" required id="nome">
     
                     <label>Celular</label>
-                    <input type="text"  required>
+                    <input type="text" required id="celular">
                 </div>
                 <div class="nomeCelular">
                     <label>Foto</label>
-                    <input type="text"  required>
+                    <input type="text" required id="foto">
     
                     <label>Email</label>
-                    <input type="text"  required>
+                    <input type="text" required id="email">
                 </div>
                 
                 <div class="nomeCelular">
                     <label >Endereço</label>
-                    <input  required type="text">
+                    <input  required type="text" id="endereco">
                     
                     <label >Cidade</label>
-                    <input required type="text">
+                    <input required type="text" id="cidade">
                 </div>
                 
                
             </div>
 
-            <div class="bt-cadastro">
-                <button>Cadastrar</button> 
+            <div class="bt-cadastro" >
+                <button id="bt_cadastro">Cadastrar</button> 
             </div>
             <div class="tabela">
                 <table>
                     <thead>
+                    <tr>
                         <th>Id</th>
                         <th>Nome</th>
                         <th>Celular</th>
@@ -53,6 +54,8 @@
                         <th>Email</th>
                         <th>Endereço</th>
                         <th>Cidade</th>
+                    </tr>
+
                     </thead>
                     <tbody id="tabela">
 
