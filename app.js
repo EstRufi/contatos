@@ -27,8 +27,18 @@ async function inserirContato(){
         inputEndereco,
         inputCidade
     }
-
+    return contato
     document.getElementById('bt_cadastro').addEventListener('click', await inserirContato(await postContato(contato)))
 }
 
-inserirContato()
+
+function adicionaTabela(contato){
+    const tbody = document.getElementById('tabela')
+    const tr = document.createElement('tr')
+
+    let tdNome = document.createElement('td')
+    tdNome.textContent = contato.inputNome
+
+    tr.appendChild(tdNome)
+    tbody.appendChild(tr)
+}
