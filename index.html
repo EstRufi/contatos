@@ -15,32 +15,49 @@
         <div class="content">
             <div class="cadastro">
                 <div class="nomeCelular">
-                    <label for="a">Nome</label>
-                    <input type="text" placeholder="">
+                    <label >Nome</label>
+                    <input type="text" required>
     
-                    <label for="b">Celular</label>
-                    <input type="text">
+                    <label>Celular</label>
+                    <input type="text"  required>
                 </div>
                 <div class="nomeCelular">
-                    <label for="c">Foto</label>
-                    <input type="text">
+                    <label>Foto</label>
+                    <input type="text"  required>
     
-                    <label for="">email</label>
-                    <input class="email" type="text">
+                    <label>Email</label>
+                    <input type="text"  required>
                 </div>
                 
                 <div class="nomeCelular">
-                    <label for="">Endereço</label>
-                    <input class="enderecoCidade" type="text">
+                    <label >Endereço</label>
+                    <input  required type="text">
                     
-                    <label for="">Cidade</label>
-                    <input class="enderecoCidade" type="text">
+                    <label >Cidade</label>
+                    <input required type="text">
                 </div>
                 
-                <button class="bt-cadastro">Cadastrar</button>
+               
+            </div>
+
+            <div class="bt-cadastro">
+                <button>Cadastrar</button> 
             </div>
             <div class="tabela">
-    
+                <table>
+                    <thead>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Celular</th>
+                        <th>Imagem</th>
+                        <th>Email</th>
+                        <th>Endereço</th>
+                        <th>Cidade</th>
+                    </thead>
+                    <tbody id="tabela">
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>

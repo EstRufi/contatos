@@ -10,5 +10,3 @@ const novoContato ={
     "endereco": "A única pessoa que nunca erra é a pessoa que não faz nada",
     "cidade": "Pense"
 }
-
-

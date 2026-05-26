@@ -2,15 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+body{
+    background-color: #c9c9c9;
 }
 
 header{
-    background-color: aquamarine;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
+ 
 }
 
 main{
@@ -19,7 +23,8 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aqua;display: flex;
+
+    display: flex;
 }
 
 .content{
@@ -27,28 +32,46 @@ main{
     height: 85vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(213, 35, 35);
 }
 
 .cadastro{
-    height: 40vh;
-    background-color: antiquewhite;
+    height: 15vh;
     display: flex;
-    flex-direction: column;
 }
 .nomeCelular{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
+  
+    width: 100%;
 }
 
-.cadastro input{
-    height: 40px;
-    width: 90px;
+.bt-cadastro{
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+button{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px ;
+    border: none;
 }
 
+/* active é para fazer uma animação quando for clicado*/
+button:active{
+   background-color: rgb(160, 223, 248);
+   font-weight: bold;
+   width: 400px;
+    font-size: 20px
+}
 .tabela{
-    height: 60vh;
+    height: 80vh;
     background-color: rgb(28, 209, 209);
+}
+
+table,th{
+    border: 1px solid black;
 }
