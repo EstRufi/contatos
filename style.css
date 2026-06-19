@@ -68,10 +68,26 @@ button:active{
     font-size: 20px
 }
 .tabela{
-    height: 80vh;
-    background-color: rgb(28, 209, 209);
+    width: 100%;
+    background-color: rgb(170, 170, 170);
+    border-radius: 10px;
 }
 
-table,th,tr,td{
-    border: 1px solid black;
+table{
+    border: 2px solid black;
+    border-radius: 10px;
+    
+}
+
+.colunaButton{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+img{
+    width: 100px;
+    border-radius: 20px;
+    padding: 10px;
 }

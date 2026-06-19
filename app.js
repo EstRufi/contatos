@@ -41,6 +41,13 @@ async function inserirContato(){
     const contatoPost = await postContato(contato)
     adicionaTabela(contatoPost)
 
+    document.getElementById('nome').value = ''
+    document.getElementById('celular').value = ''
+    document.getElementById('foto').value = ''
+    document.getElementById('email').value = ''
+    document.getElementById('endereco').value = ''
+    document.getElementById('cidade').value = ''
+
     return contatoPost
 }
 
@@ -59,7 +66,9 @@ function adicionaTabela(contato){
     tdCelular.textContent = contato.celular
 
     let tdFoto = document.createElement('td')
-    tdFoto.textContent = contato.foto
+    let img = document.createElement('img')
+    img.src = contato.foto
+    tdFoto.appendChild(img)
 
     let tdEmail = document.createElement('td')
     tdEmail.textContent = contato.email
@@ -73,6 +82,7 @@ function adicionaTabela(contato){
     let tdBnt = document.createElement('td')
     let buttonDelete = document.createElement('button')
     buttonDelete.textContent = "deletar"
+    tdBnt.className = "colunaButton"
 
     buttonDelete.addEventListener('click',async () =>{
         await deleteContato(contato.id)
@@ -82,7 +92,15 @@ function adicionaTabela(contato){
 
     let buttonAtualizar = document.createElement('button')
     buttonAtualizar.textContent = "atualizar"
-    
+    buttonAtualizar.addEventListener('click',async() =>{
+        document.getElementById('nome').value = contato.nome
+        document.getElementById('celular').value = contato.celular
+        document.getElementById('foto').value = contato.foto
+        document.getElementById('email').value = contato.email
+        document.getElementById('endereco').value = contato.endereco
+        document.getElementById('cidade').value = contato.cidade
+
+    })    
 
     
 
