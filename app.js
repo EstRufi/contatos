@@ -12,23 +12,25 @@ const novoContato ={
 }
 
 async function inserirContato(){
-    const inputNome = document.getElementById('nome').value
-    const inputCelular = document.getElementById('celular').value
-    const inputFoto = document.getElementById('foto').value
-    const inputEmail = document.getElementById('email').value
-    const inputEndereco = document.getElementById('endereco').value
-    const inputCidade = document.getElementById('cidade').value
+    const nome = document.getElementById('nome').value
+    const celular = document.getElementById('celular').value
+    const foto = document.getElementById('foto').value
+    const email = document.getElementById('email').value
+    const endereco = document.getElementById('endereco').value
+    const cidade = document.getElementById('cidade').value
 
     const contato ={
-        inputNome,
-        inputCelular,
-        inputFoto,
-        inputEmail,
-        inputEndereco,
-        inputCidade
+        nome,
+        celular,
+        foto,
+        email,
+        endereco,
+        cidade
     }
-    return contato
-    document.getElementById('bt_cadastro').addEventListener('click', await inserirContato(await postContato(contato)))
+   
+    const contatoPost = await postContato(contato)
+    adicionaTabela(contatoPost)
+    return contatoPost
 }
 
 
@@ -42,3 +44,4 @@ function adicionaTabela(contato){
     tr.appendChild(tdNome)
     tbody.appendChild(tr)
 }
+document.getElementById('bt_cadastro').addEventListener('click',inserirContato)
