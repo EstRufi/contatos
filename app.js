@@ -11,6 +11,16 @@ const novoContato ={
     "cidade": "Pense"
 }
 
+async function carregarContatos() {
+    const tbody = document.getElementById('tabela')
+
+    const listarContato = await getContatos()
+
+    listarContato.forEach(dadosContato => {
+        adicionaTabela(dadosContato)
+    });
+}
+
 async function inserirContato(){
     const nome = document.getElementById('nome').value
     const celular = document.getElementById('celular').value
@@ -30,6 +40,7 @@ async function inserirContato(){
    
     const contatoPost = await postContato(contato)
     adicionaTabela(contatoPost)
+
     return contatoPost
 }
 
@@ -38,10 +49,44 @@ function adicionaTabela(contato){
     const tbody = document.getElementById('tabela')
     const tr = document.createElement('tr')
 
-    let tdNome = document.createElement('td')
-    tdNome.textContent = contato.inputNome
+    let tdId = document.createElement('td')
+    tdId.textContent = contato.id
 
-    tr.appendChild(tdNome)
+    let tdNome = document.createElement('td')
+    tdNome.textContent = contato.nome
+
+    let tdCelular = document.createElement('td')
+    tdCelular.textContent = contato.celular
+
+    let tdFoto = document.createElement('td')
+    tdFoto.textContent = contato.foto
+
+    let tdEmail = document.createElement('td')
+    tdEmail.textContent = contato.email
+
+    let tdEndereco= document.createElement('td')
+    tdEndereco.textContent = contato.endereco
+
+    let tdCidade = document.createElement('td')
+    tdCidade.textContent = contato.cidade
+
+    let tdBnt = document.createElement('td')
+    let buttonDelete = document.createElement('button')
+    buttonDelete.textContent = "deletar"
+    buttonDelete.id = 'buttonDelete'
+    let buttonAtualizar = document.createElement('button')
+    buttonAtualizar.textContent = "atualizar"
+    
+
+    
+
+    tdBnt.append(buttonDelete,buttonAtualizar)
+
+    tr.append(tdId,tdNome,tdCelular,tdFoto,tdEmail,tdEndereco,tdCidade,tdBnt)
     tbody.appendChild(tr)
+
+    return tbody
 }
+document.addEventListener('DOMContentLoaded', carregarContatos)
 document.getElementById('bt_cadastro').addEventListener('click',inserirContato)
+document.getElementById('buttonDelete').addEventListener('click', await deleteContato)
