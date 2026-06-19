@@ -13,7 +13,7 @@ const novoContato ={
 
 async function carregarContatos() {
     const tbody = document.getElementById('tabela')
-
+    tbody.innerHTML = ''
     const listarContato = await getContatos()
 
     listarContato.forEach(dadosContato => {
@@ -73,7 +73,13 @@ function adicionaTabela(contato){
     let tdBnt = document.createElement('td')
     let buttonDelete = document.createElement('button')
     buttonDelete.textContent = "deletar"
-    buttonDelete.id = 'buttonDelete'
+
+    buttonDelete.addEventListener('click',async () =>{
+        await deleteContato(contato.id)
+
+        await carregarContatos()
+    })
+
     let buttonAtualizar = document.createElement('button')
     buttonAtualizar.textContent = "atualizar"
     
@@ -89,4 +95,3 @@ function adicionaTabela(contato){
 }
 document.addEventListener('DOMContentLoaded', carregarContatos)
 document.getElementById('bt_cadastro').addEventListener('click',inserirContato)
-document.getElementById('buttonDelete').addEventListener('click', await deleteContato)
